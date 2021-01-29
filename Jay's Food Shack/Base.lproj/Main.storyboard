@@ -214,11 +214,65 @@
                             <outlet property="delegate" destination="kVq-6x-HaN" id="KBk-Iw-eQM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="rex-Kj-KDg"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="rex-Kj-KDg">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="5zO-16-ULs">
+                            <connections>
+                                <action selector="submitTapped:" destination="kVq-6x-HaN" id="ycb-Sb-xNF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="jhJ-ui-PUF" kind="presentation" identifier="confirmOrder" destinationCreationSelector="confirmOrder:" id="1lU-Ks-IYl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30K-2J-H1U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1337.68115942029" y="609.375"/>
+        </scene>
+        <!--Order Confirmation View Controller-->
+        <scene sceneID="e4K-MU-Wbt">
+            <objects>
+                <viewController id="jhJ-ui-PUF" customClass="OrderConfirmationViewController" customModule="Jay_s_Food_Shack" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NBE-Ct-k5h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FBe-l9-JQM">
+                                <rect key="frame" x="180" y="406" width="54" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q6f-LX-inb">
+                                        <rect key="frame" x="0.0" y="0.0" width="54" height="30"/>
+                                        <state key="normal" title="Dismiss"/>
+                                        <connections>
+                                            <segue destination="kaC-Nq-bdf" kind="unwind" identifier="dismissConfirmation" unwindAction="unwindToOrderListWithSegue:" id="LOK-uI-81J"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kAK-xd-Ife">
+                                <rect key="frame" x="34" y="223.5" width="315" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Efy-aO-Wet"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Efy-aO-Wet" firstAttribute="bottom" secondItem="FBe-l9-JQM" secondAttribute="bottom" constant="372" id="2BZ-u2-3iZ"/>
+                            <constraint firstItem="FBe-l9-JQM" firstAttribute="leading" secondItem="Efy-aO-Wet" secondAttribute="leading" constant="180" id="8uL-D1-Eqe"/>
+                            <constraint firstItem="Efy-aO-Wet" firstAttribute="trailing" secondItem="FBe-l9-JQM" secondAttribute="trailing" constant="180" id="DIK-or-pfN"/>
+                            <constraint firstItem="FBe-l9-JQM" firstAttribute="top" secondItem="kAK-xd-Ife" secondAttribute="bottom" constant="162" id="F2q-bB-Mqa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confirmationLabel" destination="kAK-xd-Ife" id="iTy-GN-Rcc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UZp-hn-xUX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="kaC-Nq-bdf" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2105.7971014492755" y="608.70535714285711"/>
         </scene>
         <!--Order-->
         <scene sceneID="XHr-eR-jlC">
