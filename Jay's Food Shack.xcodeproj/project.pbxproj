@@ -74,21 +74,53 @@
 			children = (
 				6929273625C1F2F6001B4CB3 /* AppDelegate.swift */,
 				6929273825C1F2F6001B4CB3 /* SceneDelegate.swift */,
-				6929273C25C1F2F6001B4CB3 /* Main.storyboard */,
-				6980384625C37FF500D6ED9D /* OrderConfirmationViewController.swift */,
-				6929275825C1F707001B4CB3 /* MenuItem.swift */,
-				6929275B25C1FC17001B4CB3 /* ResponseModels.swift */,
-				6929275E25C1FD26001B4CB3 /* Order.swift */,
-				6929276125C1FDE6001B4CB3 /* MenuController.swift */,
-				6929275525C1F699001B4CB3 /* MenuItemDetailViewController.swift */,
-				6929274C25C1F5A6001B4CB3 /* CategoryTableViewController.swift */,
-				6929274F25C1F5B7001B4CB3 /* MenuTableViewController.swift */,
-				6929275225C1F5C2001B4CB3 /* OrderTableViewController.swift */,
+				6980384D25C3AF6C00D6ED9D /* Views */,
+				6980384A25C3AF3A00D6ED9D /* Controllers */,
+				6980384C25C3AF5900D6ED9D /* Models */,
+				6980384E25C3AF7300D6ED9D /* Services */,
 				6929273F25C1F2F7001B4CB3 /* Assets.xcassets */,
 				6929274125C1F2F7001B4CB3 /* LaunchScreen.storyboard */,
 				6929274425C1F2F7001B4CB3 /* Info.plist */,
 			);
 			path = "Jay's Food Shack";
+			sourceTree = "<group>";
+		};
+		6980384A25C3AF3A00D6ED9D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6980384625C37FF500D6ED9D /* OrderConfirmationViewController.swift */,
+				6929275525C1F699001B4CB3 /* MenuItemDetailViewController.swift */,
+				6929274C25C1F5A6001B4CB3 /* CategoryTableViewController.swift */,
+				6929274F25C1F5B7001B4CB3 /* MenuTableViewController.swift */,
+				6929275225C1F5C2001B4CB3 /* OrderTableViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6980384C25C3AF5900D6ED9D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6929275825C1F707001B4CB3 /* MenuItem.swift */,
+				6929275B25C1FC17001B4CB3 /* ResponseModels.swift */,
+				6929275E25C1FD26001B4CB3 /* Order.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6980384D25C3AF6C00D6ED9D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6929273C25C1F2F6001B4CB3 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6980384E25C3AF7300D6ED9D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6929276125C1FDE6001B4CB3 /* MenuController.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

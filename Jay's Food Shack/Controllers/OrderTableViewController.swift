@@ -39,6 +39,18 @@ class OrderTableViewController: UITableViewController {
         let menuItem = MenuController.shared.order.menuItems[indexPath.row]
         cell.textLabel?.text = menuItem.name
         cell.detailTextLabel?.text = MenuItem.priceFormatter.string(from: NSNumber(value: menuItem.price))
+        
+        MenuController.shared.fetchImage(url: menuItem.imageURL) { (image) in
+            guard let image = image else { return }
+            DispatchQueue.main.async {
+                if let currentIndexPath = self.tableView.indexPath(for: cell),
+                   currentIndexPath != indexPath {
+                    return
+                }
+                cell.imageView?.image = image
+                cell.setNeedsLayout()
+            }
+        }
     }
 
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -94,29 +106,11 @@ class OrderTableViewController: UITableViewController {
             self.present(alert, animated: true, completion: nil)
         }
     }
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    @IBAction func unwindToOrderList(segue: UIStoryboardSegue) {
+        if segue.identifier == "dismissConfirmation" {
+            MenuController.shared.order.menuItems.removeAll()
+        }
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+   
 }

@@ -5,6 +5,7 @@
 //  Created by Jay Phillips on 1/27/21.
 //
 
+import UIKit
 import Foundation
 
 class MenuController {
@@ -78,6 +79,18 @@ class MenuController {
                 } catch {
                     completion(.failure(error))
                 }
+            }
+        }
+        task.resume()
+    }
+    
+    func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) {
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if let data = data,
+               let image = UIImage(data: data) {
+                completion(image)
+            } else {
+                completion(nil)
             }
         }
         task.resume()
